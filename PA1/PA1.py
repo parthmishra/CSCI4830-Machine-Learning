@@ -3,8 +3,6 @@ import pandas as pd
 import numpy as np
 import math
 import random
-import operator
-import functools
 from sklearn.cross_validation import train_test_split
 
 
@@ -64,7 +62,6 @@ def gaussianCF(vector):
 		for x in range(len(vector)):
 			mean = findMean(trainSet, features[x], labels[i])
 			sd = findSD(trainSet, features[x], labels[i], mean)
-			#print(vector[x])
 			pdf = findPDF(vector[x], mean, sd)
 			probabilities.append(math.log(pdf))
 		prob = np.sum(probabilities)
